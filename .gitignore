@@ -1,5 +1,6 @@
 # dev project files
 default_env.tres
+popup.gd
 *.godot
 *.tscn
 
