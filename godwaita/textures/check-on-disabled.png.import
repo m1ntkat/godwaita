@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/check-on-disabled.png-99a34c19c278e2e6b6fd22b83014dd7a.stex"
+path="res://.import/check-on-disabled.png-460df1006054b80a274cf2f01e3b2506.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adwaita-godot/textures/check-on-disabled.png"
-dest_files=[ "res://.import/check-on-disabled.png-99a34c19c278e2e6b6fd22b83014dd7a.stex" ]
+source_file="res://godwaita/textures/check-on-disabled.png"
+dest_files=[ "res://.import/check-on-disabled.png-460df1006054b80a274cf2f01e3b2506.stex" ]
 
 [params]
 

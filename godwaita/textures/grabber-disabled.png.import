@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grabber-disabled.png-1a82f9a376aad0d7b2df3a6ca8b626d6.stex"
+path="res://.import/grabber-disabled.png-041b5d78b59112dace38e19cd5c3ad5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adwaita-godot/textures/grabber-disabled.png"
-dest_files=[ "res://.import/grabber-disabled.png-1a82f9a376aad0d7b2df3a6ca8b626d6.stex" ]
+source_file="res://godwaita/textures/grabber-disabled.png"
+dest_files=[ "res://.import/grabber-disabled.png-041b5d78b59112dace38e19cd5c3ad5e.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/radio-on-disabled.png-bc752221cbc4fbb42ef16732d7a3a0b5.stex"
+path="res://.import/radio-on-disabled.png-aa5e2213f7c3dbd8ffed147388656510.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adwaita-godot/textures/radio-on-disabled.png"
-dest_files=[ "res://.import/radio-on-disabled.png-bc752221cbc4fbb42ef16732d7a3a0b5.stex" ]
+source_file="res://godwaita/textures/radio-on-disabled.png"
+dest_files=[ "res://.import/radio-on-disabled.png-aa5e2213f7c3dbd8ffed147388656510.stex" ]
 
 [params]
 

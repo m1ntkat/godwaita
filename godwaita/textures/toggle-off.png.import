@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/toggle-off.png-e61e4e0fa3ae8989a22497e701c55f0a.stex"
+path="res://.import/toggle-off.png-a1ea33c6960409720a1066692c6b4683.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adwaita-godot/textures/toggle-off.png"
-dest_files=[ "res://.import/toggle-off.png-e61e4e0fa3ae8989a22497e701c55f0a.stex" ]
+source_file="res://godwaita/textures/toggle-off.png"
+dest_files=[ "res://.import/toggle-off.png-a1ea33c6960409720a1066692c6b4683.stex" ]
 
 [params]
 
