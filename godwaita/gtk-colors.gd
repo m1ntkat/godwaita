@@ -35,7 +35,7 @@ const BOX_PROPS = {
 }
 
 
-# colorizes pixels of tex with color
+# colorizes img of type in theme with col
 func colorize_texture(type: String, img: String, col: Color):
 	var tex = theme.get_icon(img, type)
 	var data = tex.get_data()
@@ -88,23 +88,24 @@ func update_theme_colors():
 		var key = parts[0]
 		var csv = parts[1].rstrip(');').lstrip('a(').replace(' ', '')
 
-		# get rgb from csv (ignore possible alpha)
+		# get rgb(a) from csv
 		var values = csv.split(',')
 		var r = int(values[0])
 		var g = int(values[1])
 		var b = int(values[2])
+		var a = int(values[3]) if len(values) > 3 else 255
 
 		# recolor images
 		if key == IMG_RECOLOR_KEY:
 			for type in IMAGES:
 				for img in IMAGES[type]:
-					colorize_texture(type, img, Color8(r, g, b))
+					colorize_texture(type, img, Color8(r, g, b, a))
 
 		# recolor appropriate boxes
 		for c in BOX_PROPS:
 			if c == key:
 				for item in BOX_PROPS[c]:
-					set_box_props(item[0], item[1], item[2], Color8(r, g, b))
+					set_box_props(item[0], item[1], item[2], Color8(r, g, b, a))
 
 				break
 
