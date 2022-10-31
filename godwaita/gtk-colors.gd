@@ -2,6 +2,7 @@ extends Control
 
 
 const IMG_RECOLOR_KEY = 'accent_color'
+# { TypeName: [icon_name,], }
 const IMAGES = {
 	'CheckBox': [
 		'checked', 'checked_disabled', 'radio_checked',
@@ -11,7 +12,14 @@ const IMAGES = {
 	'Tree': ['checked'],
 	'PopupMenu': ['radio_checked', 'checked']
 }
+# { color_key: [ [TypeName, box_name, [prop_name], (alpha_override)], ], }
 const BOX_PROPS = {
+	'window_fg_color': [
+		['Button', 'normal', ['bg_color'], 0.2],
+		['Button', 'hover', ['bg_color'], 0.3],
+		['Button', 'pressed', ['bg_color'], 0.4],
+		['Button', 'disabled', ['bg_color'], 0.1],
+	],
 	'window_bg_color': [
 		['Panel', 'panel', ['bg_color']],
 		['TabContainer', 'panel', ['bg_color']],
@@ -49,6 +57,7 @@ const BOX_PROPS = {
 		['ProgressBar', 'bg', ['bg_color']]
 	]
 }
+# { color_key: { TypeName: [color_name,], }, }
 const COLORS = {
 	'accent_color': {
 		'LineEdit': ['selection_color'],
@@ -208,10 +217,18 @@ func update_theme_colors():
 		for c in BOX_PROPS:
 			if c == key:
 				for item in BOX_PROPS[c]:
+					if len(item) > 3:
+						color_value.a = item[3]
+						print(item)
 					set_box_props(item[0], item[1], item[2], color_value)
+					if str(theme.get_stylebox('hover', 'Button').bg_color.a).begins_with('0.078'):
+						print('!', item)
+						return
 
 				break
 
 
 func _ready():
+	print(theme.get_stylebox('hover', 'Button').bg_color)
 	update_theme_colors()
+	print(theme.get_stylebox('hover', 'Button').bg_color)
