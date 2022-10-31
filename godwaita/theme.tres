@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=78 format=2]
+[gd_resource type="Theme" load_steps=79 format=2]
 
 [ext_resource path="res://godwaita/textures/grabber.png" type="Texture" id=1]
 [ext_resource path="res://godwaita/fonts/Cantarell/Cantarell-Bold.ttf" type="DynamicFontData" id=2]
@@ -392,6 +392,22 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id=63]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [sub_resource type="StyleBoxEmpty" id=41]
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -539,6 +555,7 @@ HSlider/icons/grabber = ExtResource( 1 )
 HSlider/icons/grabber_disabled = ExtResource( 1 )
 HSlider/icons/grabber_highlight = ExtResource( 1 )
 HSlider/styles/slider = SubResource( 56 )
+Icons/icons/close = ExtResource( 11 )
 Label/fonts/font = SubResource( 7 )
 LineEdit/colors/font_color_selected = Color( 1, 1, 1, 1 )
 LineEdit/colors/selection_color = Color( 0.207843, 0.517647, 0.894118, 1 )
@@ -581,6 +598,9 @@ TextEdit/fonts/font = SubResource( 7 )
 TextEdit/styles/focus = SubResource( 24 )
 TextEdit/styles/normal = SubResource( 9 )
 TextEdit/styles/read_only = SubResource( 23 )
+TooltipLabel/colors/font_color = Color( 1, 1, 1, 1 )
+TooltipLabel/fonts/font = SubResource( 7 )
+TooltipPanel/styles/panel = SubResource( 63 )
 Tree/colors/font_color = Color( 1, 1, 1, 1 )
 Tree/constants/draw_guides = 0
 Tree/fonts/font = SubResource( 7 )
