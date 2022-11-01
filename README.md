@@ -12,4 +12,4 @@ Copyright © 2022 zehkira, [MIT License](https://gitlab.com/zehkira/godwaita/-/b
     <img src='https://gitlab.com/zehkira/godwaita/-/raw/master/assets/support.png' alt='patreon' width='220'>
 </a>
 <br><br>
-<img src='https://gitlab.com/zehkira/godwaita/-/raw/master/assets/screenshot.png' alt='screenshot' width='680'>
+<img src='https://gitlab.com/zehkira/godwaita/-/raw/master/assets/screenshot.png' alt='screenshot' width='460'>
