@@ -6,9 +6,12 @@ const IMG_RECOLOR_KEY = 'accent_color'
 const IMAGES = {
 	'CheckBox': [
 		'checked', 'checked_disabled', 'radio_checked',
-		'radio_checked_disabled'
+		'radio_checked_disabled', 'unchecked', 'unchecked_disabled',
+		'radio_unchecked', 'radio_unchecked_disabled'
 	],
-	'CheckButton': ['on', 'on_disabled'],
+	'CheckButton': ['on', 'on_disabled', 'off', 'off_disabled'],
+	'OptionButton': ['arrow'],
+	'WindowDialog': ['close', 'close_highlight'],
 	'Tree': ['checked'],
 	'PopupMenu': ['radio_checked', 'checked']
 }
@@ -100,13 +103,13 @@ func colorize_texture(type: String, img: String, col: Color):
 		for y in range(data.get_height()):
 			# recolor non-grayscale pixels
 			var pix = data.get_pixel(x, y)
-			if pix.s == 0:
+			if not (pix.a and pix.v and pix.s):
 				continue
 
 			# blend
 			pix.h = col.h
-			pix.s = col.s * pix.s
-			pix.v = col.v * pix.v
+			pix.s *= col.s
+			pix.v *= col.v
 			data.set_pixel(x, y, pix)
 
 	data.unlock()
@@ -219,16 +222,10 @@ func update_theme_colors():
 				for item in BOX_PROPS[c]:
 					if len(item) > 3:
 						color_value.a = item[3]
-						print(item)
 					set_box_props(item[0], item[1], item[2], color_value)
-					if str(theme.get_stylebox('hover', 'Button').bg_color.a).begins_with('0.078'):
-						print('!', item)
-						return
 
 				break
 
 
 func _ready():
-	print(theme.get_stylebox('hover', 'Button').bg_color)
 	update_theme_colors()
-	print(theme.get_stylebox('hover', 'Button').bg_color)
