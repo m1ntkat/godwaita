@@ -91,6 +91,19 @@ const COLORS = {
 		'ProgressBar': ['font_color']
 	}
 }
+const COLOR_ALPHA_OFFSETS = {
+	'': 0,
+	'_fg': 0,
+	'_accel': 0,
+	'_separator': 0,
+	'_focus': -0.1,
+	'_bg': -0.6,
+	'_disabled': -0.7,
+	'_uneditable': -0.7,
+	'_readonly': -0.7,
+	'_hover': -0.3,
+	'_pressed': -0.5
+}
 
 
 # colorizes img of type in theme with col
@@ -122,37 +135,14 @@ func colorize_texture(type: String, img: String, col: Color):
 # automatically creates colors for other potential states
 func set_colors(type: String, cols: Array, value: Color):
 	for c in cols:
-		for appendix in ['', '_fg', '_accel', '_separator']:
-			theme.set_color(c + appendix, type, value)
-
-		theme.set_color(
-			c + '_focus', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.1, 0.1))
-		)
-		theme.set_color(
-			c + '_bg', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.6, 0.1))
-		)
-		theme.set_color(
-			c + '_disabled', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.7, 0.1))
-		)
-		theme.set_color(
-			c + '_uneditable', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.7, 0.1))
-		)
-		theme.set_color(
-			c + '_readonly', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.7, 0.1))
-		)
-		theme.set_color(
-			c + '_hover', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.3, 0.1))
-		)
-		theme.set_color(
-			c + '_pressed', type,
-			Color(value.r, value.g, value.b, max(value.a - 0.5, 0.1))
-		)
+		for appendix in COLOR_ALPHA_OFFSETS:
+			theme.set_color(
+				c + appendix, type,
+				Color(
+					value.r, value.g, value.b,
+					clamp(value.a + COLOR_ALPHA_OFFSETS[appendix], 0, 1)
+				)
+			)
 
 
 # sets multiple color props of type->box to value
