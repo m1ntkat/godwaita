@@ -158,7 +158,7 @@ func set_box_props(type: String, box: String, props: Array, value: Color):
 func update_theme_colors():
 	# try to read gtk.css
 	var file = File.new()
-	var path = OS.get_environment('XDG_CONFIG_HOME') + '/gtk-3.0/gtk.css'
+	var path = OS.get_config_dir() + '/gtk-3.0/gtk.css'
 	var ret_code = file.open(path, File.READ)
 	if ret_code != OK:
 		push_warning(
