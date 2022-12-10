@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=81 format=2]
+[gd_resource type="Theme" load_steps=83 format=2]
 
 [ext_resource path="res://godwaita/textures/grabber.png" type="Texture" id=1]
 [ext_resource path="res://godwaita/fonts/Cantarell/Cantarell-Bold.ttf" type="DynamicFontData" id=2]
@@ -187,14 +187,21 @@ corner_detail = 4
 [sub_resource type="StyleBoxLine" id=33]
 color = Color( 0.901961, 0.901961, 0.901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=56]
+[sub_resource type="StyleBoxFlat" id=66]
 bg_color = Color( 0, 0.603922, 1, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_top = 2.0
-expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id=56]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.901961, 0.901961, 0.901961, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -506,14 +513,21 @@ corner_detail = 4
 color = Color( 0.290196, 0.290196, 0.290196, 1 )
 vertical = true
 
-[sub_resource type="StyleBoxFlat" id=59]
+[sub_resource type="StyleBoxFlat" id=67]
 bg_color = Color( 0, 0.603922, 1, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 2.0
-expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id=59]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color( 0.901961, 0.901961, 0.901961, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="DynamicFont" id=13]
 size = 12
@@ -584,6 +598,8 @@ HSeparator/styles/separator = SubResource( 33 )
 HSlider/icons/grabber = ExtResource( 1 )
 HSlider/icons/grabber_disabled = ExtResource( 1 )
 HSlider/icons/grabber_highlight = ExtResource( 1 )
+HSlider/styles/grabber_area = SubResource( 66 )
+HSlider/styles/grabber_area_highlight = SubResource( 66 )
 HSlider/styles/slider = SubResource( 56 )
 Icons/icons/close = ExtResource( 11 )
 Label/colors/font_color = Color( 0.180392, 0.180392, 0.180392, 1 )
@@ -666,6 +682,8 @@ VSeparator/styles/separator = SubResource( 34 )
 VSlider/icons/grabber = ExtResource( 1 )
 VSlider/icons/grabber_disabled = ExtResource( 15 )
 VSlider/icons/grabber_highlight = ExtResource( 1 )
+VSlider/styles/grabber_area = SubResource( 67 )
+VSlider/styles/grabber_area_highlight = SubResource( 67 )
 VSlider/styles/slider = SubResource( 59 )
 WindowDialog/colors/title_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 WindowDialog/constants/close_h_ofs = 35

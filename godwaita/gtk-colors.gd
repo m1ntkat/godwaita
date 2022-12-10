@@ -32,8 +32,10 @@ const BOX_PROPS = {
 	],
 	'accent_color': [
 		['ProgressBar', 'fg', ['bg_color']],
-		['VSlider', 'slider', ['bg_color']],
-		['HSlider', 'slider', ['bg_color']],
+		['VSlider', 'grabber_area', ['bg_color']],
+		['VSlider', 'grabber_area_highlight', ['bg_color']],
+		['HSlider', 'grabber_area', ['bg_color']],
+		['HSlider', 'grabber_area_highlight', ['bg_color']],
 		['Button', 'focus', ['border_color']],
 		['LineEdit', 'focus', ['border_color']],
 		['TextEdit', 'focus', ['border_color']],
@@ -57,7 +59,9 @@ const BOX_PROPS = {
 	'view_bg_color': [
 		['LineEdit', 'normal', ['bg_color']],
 		['TextEdit', 'normal', ['bg_color']],
-		['ProgressBar', 'bg', ['bg_color']]
+		['ProgressBar', 'bg', ['bg_color']],
+		['VSlider', 'slider', ['bg_color']],
+		['HSlider', 'slider', ['bg_color']],
 	]
 }
 # { color_key: { TypeName: [color_name,], }, }
