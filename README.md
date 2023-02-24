@@ -5,7 +5,7 @@ Godwaita allows developers to create apps that fit well into any Linux desktop.
 Copyright © 2022 zehkira, [MIT License](https://gitlab.com/zehkira/godwaita/-/blob/master/LICENSE).
 
 
-|[Download](https://gitlab.com/zehkira/godwaita/-/blob/master/INSTALL.md)|[Donate](https://www.patreon.com/bePatron?u=65739770)|
+|[Download](https://gitlab.com/zehkira/godwaita/-/blob/master/INSTALL.md)|[Donate](https://ko-fi.com/zehkira)|
 |-|-|
 
 <img src='https://gitlab.com/zehkira/godwaita/-/raw/master/assets/screenshot.png' alt='screenshot' width='460'>
