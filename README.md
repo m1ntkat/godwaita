@@ -1,4 +1,4 @@
-Godwaita is a Godot UI theme that imitates the look of GTK/Libadwaita. It automatically adapts to the user's chosen GTK colors (which can be edited using [Gradience](https://gradienceteam.github.io/)).
+Godwaita is a Godot 3 UI theme that imitates the look of GTK/Libadwaita. It automatically adapts to the user's chosen GTK colors (which can be edited using [Gradience](https://gradienceteam.github.io/)).
 
 Godwaita allows developers to create apps that fit well into any Linux desktop.
 
