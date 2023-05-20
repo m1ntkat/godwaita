@@ -9,9 +9,9 @@ const IMAGES = {
 		'radio_checked_disabled', 'unchecked', 'unchecked_disabled',
 		'radio_unchecked', 'radio_unchecked_disabled'
 	],
-	'CheckButton': ['on', 'on_disabled', 'off', 'off_disabled'],
+	'CheckButton': ['on', 'checked_disabled', 'off', 'unchecked_disabled'],
 	'OptionButton': ['arrow'],
-	'WindowDialog': ['close', 'close_highlight'],
+	'Window': ['close', 'close_highlight'],
 	'Tree': ['checked'],
 	'PopupMenu': ['radio_checked', 'checked']
 }
@@ -26,9 +26,9 @@ const BOX_PROPS = {
 	'window_bg_color': [
 		['Panel', 'panel', ['bg_color']],
 		['TabContainer', 'panel', ['bg_color']],
-		['WindowDialog', 'panel', ['bg_color']],
+		['Window', 'panel', ['bg_color']],
 		['PopupMenu', 'panel', ['bg_color']],
-		['PopupDialog', 'panel', ['bg_color']],
+		['Popup', 'panel', ['bg_color']],
 	],
 	'accent_color': [
 		['ProgressBar', 'fg', ['bg_color']],
@@ -78,12 +78,12 @@ const COLORS = {
 		'Label': ['font_color'],
 		'RichTextLabel': ['default_color'],
 		'TabContainer': ['font_color'],
-		'WindowDialog': ['title_color'],
+		'Window': ['title_color'],
 		'PopupMenu': ['font_color'],
 		'CheckBox': ['font_color'],
 		'CheckButton': ['font_color'],
 		'Tree': ['font_color', 'font_color_selected'],
-		'FileDialog': ['file_icon_modulate', 'folder_icon_modulate'],
+		'FileDialog': ['file_icon_color', 'folder_icon_color'],
 	},
 	'card_fg_color': {
 		'PanelContainer': ['font_color'],
@@ -115,7 +115,7 @@ func colorize_texture(type: String, img: String, col: Color):
 	var tex = theme.get_icon(img, type)
 	var data = tex.get_data()
 
-	data.lock()
+	false # data.lock() # TODOConverter40, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	for x in range(data.get_width()):
 		for y in range(data.get_height()):
 			# recolor non-grayscale pixels
@@ -129,7 +129,7 @@ func colorize_texture(type: String, img: String, col: Color):
 			pix.v *= col.v
 			data.set_pixel(x, y, pix)
 
-	data.unlock()
+	false # data.unlock() # TODOConverter40, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	tex = ImageTexture.new()
 	tex.create_from_image(data)
 	theme.set_icon(img, type, tex)
@@ -177,7 +177,7 @@ func update_theme_colors():
 			continue
 
 		# prepare for color parsing
-		var color_value = Color.transparent
+		var color_value = Color.TRANSPARENT
 		var key = ''
 		line = line.replace('@define-color ', '')
 
